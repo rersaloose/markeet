@@ -1,0 +1,36 @@
+nav{
+    background-image: linear-gradient(to right, #00b09b, #96c93d);
+    color: rgb(87, 0, 0);  
+  
+}
+
+
+.content {
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 10px 0;
+
+}
+.content h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    width: 20%;
+    margin: 0; 
+}
+li{
+    cursor: pointer;
+    font-size: 20px;
+    text-decoration: none;
+}
+li:hover {
+color: white;
+}

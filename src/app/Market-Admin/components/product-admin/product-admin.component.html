@@ -1,0 +1,134 @@
+<div class="cartbox" *ngIf="!showspner">
+  <button
+    class="btn btn-success mt-2"
+    data-bs-toggle="modal"
+    data-bs-target="#cart"
+    (click)="createproduct()"
+  >
+    Add Product
+  </button>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th></th>
+        <th>Name</th>
+        <th>Categories</th>
+        <th></th>
+        <th>Price</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of products; let index = index">
+        <td><img src="{{ item.image }}" alt="test" /></td>
+        <td>{{ item.title }}</td>
+        <td>{{ item.category }}</td>
+        <td></td>
+        <td>{{ item.price }} L.E</td>
+        <td>
+          <button
+            class="btn btn-warning"
+            data-bs-toggle="modal"
+            data-bs-target="#cart"
+            (click)="update(item)"
+          >
+            Update
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div class="text-center">
+    <app-spinner *ngIf="showspner"></app-spinner>
+</div>
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="cart"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div
+    class="modal-dialog modal-dialog-centered"
+    style="max-width: 900px !important"
+  >
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Cart Details</h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="formAdmin">
+          <div class="row">
+            <div class="col-md-4 col-sm-12">
+              <label> Tittle</label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="title"
+                placeholder="tittle"
+              />
+            </div>
+            <div class="col-md-4 col-sm-12">
+              <label> Price</label>
+              <input
+                type="number"
+                class="form-control"
+                formControlName="price"
+                placeholder="price"
+              />
+            </div>
+            <div class="col-md-4 col-sm-12">
+              <app-select
+                [data]="categories"
+                [tittle]="'categories'"
+                [all]="false"
+                [select]="formAdmin.value.category"
+                (slectedValue)="getselectedcategory($event)"
+              ></app-select>
+            </div>
+            <div class="col-md-4 col-sm-12">
+              <label> Image</label>
+              <img src="{{ basimage }}" alt="" />
+              <input
+                type="file"
+                class="form-control"
+                placeholder="image"
+                (change)="getpathimage($event)"
+              />
+            </div>
+            <div class="col-md-8 col-sm-12">
+              <label> Decrition</label>
+              <textarea
+                class="form-control"
+                placeholder="Decrition"
+                formControlName="description"
+              ></textarea>
+            </div>
+            <div class="d-flex footer mt-3">
+              <button
+                type="button"
+                id="cancel"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+              <button class="btn btn-primary" (click)="addproduct()">
+                Add Product
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

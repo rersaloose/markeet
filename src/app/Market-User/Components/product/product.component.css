@@ -1,0 +1,41 @@
+.item {
+    display: inline-block;
+  width: 100%;
+  text-decoration: none;
+  border-radius: 10px;
+  box-shadow: 0px 2px 5px rgba(38, 202, 16, 0.3);
+  transition: all 0.3s ease-in-out;
+}
+img{
+  width: 100%;
+height: 200px;
+  border-radius: 10px;
+}
+.body {
+  padding-top: 0;
+}
+.body h4 {
+    height: 75px;
+  background-color: #eee;
+  overflow: hidden;
+  font-size: 18px;
+  margin: 10px 0;
+}
+.body p {
+  padding: 5px 15px;
+  margin: 10px 0;
+  height: 100px;
+  overflow: hidden;
+  font-size: 16px;
+}
+span{
+    border-radius: 30px;
+    padding: 5px 10px ;
+    background-color: #b4f1cf;
+}
+.box{
+    transition: all 0.3s ease-in-out;
+}
+.box:hover{
+    transform: scale(1.1);
+} 
