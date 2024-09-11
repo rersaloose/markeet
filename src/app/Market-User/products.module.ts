@@ -7,6 +7,7 @@ import { SharedModule } from '../shared/shared.module';
 import { ProductComponent } from './Components/product/product.component';
 import { RouterModule } from '@angular/router';
 import { FormsModule,  } from '@angular/forms';
+import { TestFortestingComponent } from './Components/test-fortesting/test-fortesting.component';
 
 
 
@@ -14,7 +15,8 @@ import { FormsModule,  } from '@angular/forms';
   declarations: [
     AllProductComponent,
     ProductDetailsComponent,
-    ProductComponent
+    ProductComponent,
+    TestFortestingComponent
   ],
   imports: [
     BrowserModule,

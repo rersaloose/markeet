@@ -10,12 +10,14 @@ import { ProductsModule } from './Market-User/products.module';
 import { CartModule } from './cart/cart.module';
 import { RouterModule } from '@angular/router';
 import { ProductAModule } from './Market-Admin/product-a.module';
+import { LoginComponent } from './login/login.component';
 
 ;
 
 @NgModule({
   declarations: [
     AppComponent,
+    LoginComponent,
   
   ],
   imports: [
